@@ -1,0 +1,6 @@
+proj_name      = "wpbolt"
+proj_env       = "dev"
+instance_type = "t2.micro"
+hosted_zone_name       = "bency.site"
+hostname          = "wpbolt"
+hosted_zone_id       = "Z051707225RYUDBRNRZ79"
