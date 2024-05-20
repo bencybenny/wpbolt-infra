@@ -79,7 +79,7 @@ resource "aws_route53_record" "wpbolt-prod" {
 
  count = var.proj_env == "prod" ? 1 : 0
   zone_id = var.hosted_zone_id
-  name    = "${var.hostname}-${var.hosted_zone_name}"
+  name    = "${var.hostname-prod}.${var.hosted_zone_name}"
   type    = "A"
   ttl     = "30"
   records = [ aws_instance.wpbolt.public_ip ]
@@ -91,7 +91,7 @@ resource "aws_route53_record" "wpbolt-dev" {
 
  count = var.proj_env == "dev" ? 1 : 0
   zone_id = var.hosted_zone_id
-  name    = "${var.hostname}-${var.hosted_zone_name}"
+  name    = "${var.hostnamdev}.${var.hosted_zone_name}"
   type    = "A"
   ttl     = "30"
   records = [ aws_instance.wpbolt.public_ip ]
